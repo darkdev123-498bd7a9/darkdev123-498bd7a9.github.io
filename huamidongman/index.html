@@ -1,0 +1,1045 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>哗咪动漫-在线动漫观看_日本新番_国漫推荐_追番必备平台</title>
+  <meta name="description" content="哗咪动漫是一个专注在线动漫观看与追番推荐的平台，提供日本新番、国漫佳作、经典番剧、剧场版动画等丰富内容，支持按类型筛选、新番时间表、热门榜单与社区讨论，适合动漫爱好者收藏与每日追更。">
+  <meta name="keywords" content="哗咪动漫,在线动漫观看,日本新番,国漫推荐,追番平台">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236b4cff'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Arial'%3E哗%3C/text%3E%3C/svg%3E">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --brand-primary: #6b4cff;
+      --brand-secondary: #b44cff;
+      --brand-gradient: linear-gradient(135deg, #6b4cff 0%, #b44cff 100%);
+      --bg-page: #f7f5ff;
+      --bg-card: #ffffff;
+      --text-main: #1e1b2e;
+      --text-secondary: #4a455c;
+      --text-muted: #7a7592;
+      --border-light: #e9e6f2;
+      --shadow-sm: 0 4px 12px rgba(107, 76, 255, 0.08);
+      --shadow-md: 0 12px 28px rgba(107, 76, 255, 0.12);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 10px;
+      --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 顶部导航 */
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--brand-gradient);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 22px;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 24px;
+      letter-spacing: -0.5px;
+      background: var(--brand-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-weight: 500;
+      transition: color 0.2s;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover {
+      color: var(--brand-primary);
+    }
+
+    /* 按钮 */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--brand-gradient);
+      color: white;
+      box-shadow: 0 6px 16px rgba(107, 76, 255, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(107, 76, 255, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--brand-primary);
+      color: var(--brand-primary);
+    }
+
+    .btn-outline:hover {
+      background: rgba(107, 76, 255, 0.06);
+    }
+
+    /* H1 和 Banner 区域 */
+    .hero-section {
+      background: linear-gradient(145deg, #ffffff 0%, #f3efff 100%);
+      border-radius: var(--radius-lg);
+      padding: 44px 40px;
+      margin: 20px 0 40px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(107, 76, 255, 0.1);
+    }
+
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(107, 76, 255, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-title {
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+      background: var(--brand-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      max-width: 700px;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 620px;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .search-box {
+      display: flex;
+      max-width: 540px;
+      background: white;
+      border-radius: 60px;
+      padding: 6px;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 28px;
+      border: 1px solid var(--border-light);
+    }
+
+    .search-box input {
+      flex: 1;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 60px;
+      outline: none;
+      background: transparent;
+      color: var(--text-main);
+    }
+
+    .search-box input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .search-box .btn {
+      padding: 12px 30px;
+      border-radius: 60px;
+      font-size: 15px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-tags .tag-btn {
+      background: white;
+      border: 1px solid var(--border-light);
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .hero-tags .tag-btn:hover {
+      border-color: var(--brand-primary);
+      color: var(--brand-primary);
+      background: rgba(107, 76, 255, 0.04);
+    }
+
+    /* 通用区块标题 */
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title span {
+      background: var(--brand-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      font-size: 15px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .anime-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .anime-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-badge {
+      display: inline-block;
+      background: rgba(107, 76, 255, 0.1);
+      color: var(--brand-primary);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      align-self: flex-start;
+    }
+
+    .anime-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .anime-card .meta-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .meta-tags span {
+      background: #f2effa;
+      color: var(--text-secondary);
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
+
+    .anime-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      flex: 1;
+      margin-bottom: 12px;
+    }
+
+    .card-stats {
+      display: flex;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-light);
+      padding-top: 10px;
+    }
+
+    /* 最新更新列表 */
+    .update-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .update-item {
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: background 0.2s;
+    }
+
+    .update-item:hover {
+      background: #fdfbff;
+    }
+
+    .update-time {
+      font-size: 13px;
+      color: var(--brand-primary);
+      background: rgba(107, 76, 255, 0.08);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .update-title {
+      font-weight: 600;
+      font-size: 16px;
+      flex: 1 1 200px;
+    }
+
+    .update-desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      flex: 1 1 200px;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+    }
+
+    .category-item {
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      padding: 16px 12px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 15px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .category-item:hover {
+      border-color: var(--brand-primary);
+      background: rgba(107, 76, 255, 0.02);
+      transform: translateY(-2px);
+    }
+
+    .cat-icon {
+      font-size: 26px;
+    }
+
+    /* 深度解析 */
+    .deep-analysis {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      margin: 40px 0;
+    }
+
+    .deep-analysis h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    .deep-analysis p {
+      margin-bottom: 18px;
+      color: var(--text-secondary);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .deep-analysis strong {
+      color: var(--brand-primary);
+      font-weight: 700;
+    }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .faq-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+    }
+
+    .faq-card h4 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--brand-primary);
+    }
+
+    .faq-card p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .comment-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+    }
+
+    .comment-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .comment-name {
+      font-weight: 700;
+      color: var(--brand-primary);
+    }
+
+    .comment-date {
+      color: var(--text-muted);
+    }
+
+    .comment-text {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 资讯卡片 */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .news-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: transform 0.2s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .news-date {
+      font-size: 13px;
+      color: var(--brand-primary);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .news-card h4 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .news-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* 页脚 */
+    .footer {
+      background: #1a1728;
+      color: #b8b2cc;
+      padding: 48px 0 32px;
+      margin-top: 60px;
+      border-radius: 40px 40px 0 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-brand {
+      max-width: 260px;
+    }
+
+    .footer-brand .logo-text {
+      color: white;
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+      font-size: 22px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #9d97b5;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .footer-col h5 {
+      color: white;
+      font-size: 16px;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .footer-col a {
+      display: block;
+      color: #b8b2cc;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 36px;
+      padding-top: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: #7a738f;
+    }
+
+    /* 响应式 */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 32px;
+      }
+      .hero-section {
+        padding: 30px 24px;
+      }
+      .nav-links {
+        gap: 16px;
+      }
+      .deep-analysis {
+        padding: 24px 20px;
+      }
+      .section-title {
+        font-size: 24px;
+      }
+      .footer-inner {
+        flex-direction: column;
+      }
+      .footer-links {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 28px;
+      }
+      .search-box {
+        flex-direction: column;
+        background: transparent;
+        box-shadow: none;
+        gap: 10px;
+      }
+      .search-box input {
+        background: white;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border-light);
+        width: 100%;
+      }
+      .search-box .btn {
+        width: 100%;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="nav-bar">
+      <div class="logo-area">
+        <div class="logo-icon">哗</div>
+        <span class="logo-text">哗咪动漫</span>
+      </div>
+      <nav class="nav-links">
+        <a href="/#hot-recommend">热门推荐</a>
+        <a href="/#latest-update">最新更新</a>
+        <a href="/#category">分类入口</a>
+        <a href="/#deep-analysis">深度解析</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#news">动漫资讯</a>
+        <a href="/#subscribe" class="btn btn-primary" style="padding:8px 20px; font-size:14px;">开始追番</a>
+      </nav>
+    </header>
+
+    <!-- 首屏 Banner -->
+    <section class="hero-section" id="hero">
+      <h1 class="hero-title">哗咪动漫 · 在线动漫观看与追番推荐平台</h1>
+      <p class="hero-sub">汇集日本新番、国漫佳作、经典剧场版，每日更新热门番剧，提供新番时间表、类型筛选与社区讨论。在哗咪动漫轻松找到下一部想追的动画。</p>
+      <div class="search-box">
+        <input type="text" placeholder="搜索动漫名称、角色或制作公司...">
+        <button class="btn btn-primary">搜索</button>
+      </div>
+      <div class="hero-tags">
+        <a href="/#category" class="tag-btn">日本新番</a>
+        <a href="/#category" class="tag-btn">国漫推荐</a>
+        <a href="/#category" class="tag-btn">热血战斗</a>
+        <a href="/#category" class="tag-btn">奇幻冒险</a>
+        <a href="/#category" class="tag-btn">恋爱日常</a>
+        <a href="/#category" class="tag-btn">剧场版</a>
+        <a href="/#category" class="tag-btn">经典补番</a>
+        <a href="/#category" class="tag-btn">声优阵容</a>
+      </div>
+    </section>
+
+    <!-- 内容简介 -->
+    <section id="intro" style="margin-bottom:40px;">
+      <h2 class="section-title"><span>哗咪动漫</span> 内容简介</h2>
+      <p style="color:var(--text-secondary); font-size:16px; line-height:1.8; margin-bottom:16px;">哗咪动漫是一个专注于在线动漫观看与追番推荐的垂直内容平台，面向所有热爱动画的观众。无论你是喜欢日本新番、国漫精品，还是想重温经典剧场版，这里都能找到适合自己的内容。页面聚合了热门番剧推荐、新番更新时间表、分类筛选入口以及社区讨论话题，帮助你在海量动画中快速定位想看的那一部。</p>
+      <p style="color:var(--text-secondary); font-size:16px; line-height:1.8;">通过哗咪动漫，你可以了解每部作品的类型标签、看点摘要和更新状态，也可以参考编辑深度解析和用户真实评论，减少选番时间。平台内容覆盖热血、奇幻、恋爱、日常、悬疑等多种题材，适合不同年龄段和偏好的动漫爱好者。建议收藏本页，以便随时查看最新追番动态。</p>
+    </section>
+
+    <!-- 热门内容推荐 -->
+    <section id="hot-recommend" style="margin-bottom:50px;">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title"><span>热门推荐</span> 本周高人气动漫</h2>
+          <p class="section-desc">根据近期播放量与社区讨论热度综合整理，涵盖日本新番与国漫佳作。</p>
+        </div>
+      </div>
+      <div class="card-grid">
+        <div class="anime-card">
+          <span class="card-badge">奇幻冒险</span>
+          <h3>星海旅人</h3>
+          <div class="meta-tags"><span>宇宙</span><span>友情</span><span>2026新番</span></div>
+          <p>少年意外获得星图碎片，踏上穿越银河的旅程。画面精致，配乐恢弘，适合喜欢宏大叙事的观众。</p>
+          <div class="card-stats"><span>🔥 9.2分</span><span>更新至第8话</span></div>
+        </div>
+        <div class="anime-card">
+          <span class="card-badge">热血战斗</span>
+          <h3>剑与魂</h3>
+          <div class="meta-tags"><span>武士</span><span>成长</span><span>国漫</span></div>
+          <p>末代武士在乱世中寻找剑道真谛，打斗作画流畅，角色塑造扎实，每周五更新。</p>
+          <div class="card-stats"><span>🔥 9.0分</span><span>更新至第12话</span></div>
+        </div>
+        <div class="anime-card">
+          <span class="card-badge">恋爱日常</span>
+          <h3>咖啡厅的午后</h3>
+          <div class="meta-tags"><span>治愈</span><span>甜番</span><span>2026秋番</span></div>
+          <p>大学生与咖啡师因一杯手冲结缘，日常对话细腻，适合放松时观看。</p>
+          <div class="card-stats"><span>🔥 8.7分</span><span>更新至第6话</span></div>
+        </div>
+        <div class="anime-card">
+          <span class="card-badge">悬疑推理</span>
+          <h3>雾中侦探</h3>
+          <div class="meta-tags"><span>推理</span><span>反转</span><span>高智商</span></div>
+          <p>每集解决一个独立案件，主线暗藏巨大阴谋，剧情节奏紧凑，适合喜欢烧脑的观众。</p>
+          <div class="card-stats"><span>🔥 8.9分</span><span>更新至第10话</span></div>
+        </div>
+        <div class="anime-card">
+          <span class="card-badge">国漫推荐</span>
+          <h3>山海奇缘</h3>
+          <div class="meta-tags"><span>神话</span><span>冒险</span><span>水墨风</span></div>
+          <p>以山海经为背景的原创动画，美术风格独特，故事温暖有深度，适合全家观看。</p>
+          <div class="card-stats"><span>🔥 9.1分</span><span>更新至第9话</span></div>
+        </div>
+        <div class="anime-card">
+          <span class="card-badge">剧场版</span>
+          <h3>夏日终曲</h3>
+          <div class="meta-tags"><span>青春</span><span>催泪</span><span>治愈</span></div>
+          <p>讲述高中最后一个夏天的故事，画面唯美，情感真挚，剧场版已上线哗咪动漫。</p>
+          <div class="card-stats"><span>🔥 9.4分</span><span>剧场版</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最新更新 -->
+    <section id="latest-update" style="margin-bottom:50px;">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title"><span>最新更新</span> 今日番剧动态</h2>
+          <p class="section-desc">2026年11月7日 更新速报，追番不迷路。</p>
+        </div>
+      </div>
+      <div class="update-list">
+        <div class="update-item">
+          <span class="update-time">11月7日</span>
+          <span class="update-title">星海旅人 第8话</span>
+          <span class="update-desc">主角团队遭遇黑洞危机，新角色登场。</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11月7日</span>
+          <span class="update-title">剑与魂 第12话</span>
+          <span class="update-desc">最终决战打响，武士的抉择引爆剧情高潮。</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11月7日</span>
+          <span class="update-title">咖啡厅的午后 第6话</span>
+          <span class="update-desc">雨天咖啡厅迎来一位特别客人，氛围感拉满。</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11月6日</span>
+          <span class="update-title">雾中侦探 第10话</span>
+          <span class="update-desc">主线谜题揭晓过半，侦探的过去浮出水面。</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11月6日</span>
+          <span class="update-title">山海奇缘 第9话</span>
+          <span class="update-desc">神兽觉醒，水墨打斗场面收获好评。</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11月5日</span>
+          <span class="update-title">夏日终曲 剧场版上线</span>
+          <span class="update-desc">完整版剧场动画已上架，支持高清观看。</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11月5日</span>
+          <span class="update-title">机甲战线 第3话</span>
+          <span class="update-desc">新机体登场，战斗分镜流畅，萝卜番爱好者关注。</span>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11月4日</span>
+          <span class="update-title">百妖绘卷 第7话</span>
+          <span class="update-desc">单元剧形式讲述妖怪故事，本周温情向。</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 分类入口 -->
+    <section id="category" style="margin-bottom:50px;">
+      <h2 class="section-title"><span>分类入口</span> 按喜好筛选</h2>
+      <p class="section-desc">根据题材、地区、年份快速定位感兴趣的内容。</p>
+      <div class="category-grid">
+        <a href="/#category" class="category-item"><span class="cat-icon">🔥</span> 热血战斗</a>
+        <a href="/#category" class="category-item"><span class="cat-icon">✨</span> 奇幻冒险</a>
+        <a href="/#category" class="category-item"><span class="cat-icon">💖</span> 恋爱日常</a>
+        <a href="/#category" class="category-item"><span class="cat-icon">🧠</span> 悬疑推理</a>
+        <a href="/#category" class="category-item"><span class="cat-icon">🇯🇵</span> 日本新番</a>
+        <a href="/#category" class="category-item"><span class="cat-icon">🇨🇳</span> 国漫推荐</a>
+        <a href="/#category" class="category-item"><span class="cat-icon">🎬</span> 剧场版</a>
+        <a href="/#category" class="category-item"><span class="cat-icon">📼</span> 经典补番</a>
+      </div>
+    </section>
+
+    <!-- 深度解析 -->
+    <section id="deep-analysis" class="deep-analysis">
+      <h2><span>深度解析</span> 哗咪动漫的追番价值</h2>
+      <p><strong>哗咪动漫</strong>作为动漫内容聚合与推荐平台，核心价值在于帮助观众从海量作品中高效筛选。2026年秋季番数量众多，仅日本新番就有超过40部，加上国漫和剧场版，普通观众很难全部试看。哗咪动漫通过编辑精选、用户评分和标签分类，把每部作品的题材、看点、更新节奏清晰呈现，让不同偏好的观众都能快速找到入口。</p>
+      <p>从内容类型来看，平台重点覆盖热血、奇幻、恋爱、日常、悬疑五大类。热血番强调战斗作画和成长线，适合追求视觉冲击与情绪释放的观众；奇幻冒险类注重世界观构建，适合喜欢沉浸式叙事的用户；恋爱日常则主打轻松治愈，适合碎片时间观看。哗咪动漫在推荐卡片中标注了类型标签和简短看点，减少试错成本。</p>
+      <p>角色与制作阵容也是平台重点呈现的信息。比如《星海旅人》的导演曾参与多部科幻动画，配乐由知名音乐人操刀；《剑与魂》的武术指导来自真人电影团队，打斗流畅度在同档期国漫中表现突出。这些信息在哗咪动漫的深度解析和推荐卡片中均有体现，方便观众从制作角度判断是否感兴趣。</p>
+      <p>节奏与消费体验方面，哗咪动漫对每部作品的更新频率和单集时长做了标注。周更番适合追更，剧场版适合周末一口气看完。页面同时提供“最新更新”列表，按时间倒序展示，用户无需翻找即可掌握当日动态。对于喜欢囤番的观众，分类入口中的“经典补番”可以快速跳转到已完结作品。</p>
+      <p>适合人群上，哗咪动漫兼顾新入坑观众和资深宅。新观众可以通过FAQ和分类说明了解术语和观看顺序，资深观众则能通过编辑解析和评论发现冷门佳作。平台还提供用户评论和社区讨论入口，营造共同追番的氛围。如果你正在寻找一个结构清晰、信息密度适中的动漫内容站，哗咪动漫值得收藏。</p>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" style="margin-bottom:50px;">
+      <h2 class="section-title"><span>常见问题</span> 关于哗咪动漫</h2>
+      <p class="section-desc">解答观众最关心的几个问题。</p>
+      <div class="faq-grid">
+        <div class="faq-card">
+          <h4>哗咪动漫主要提供什么内容？</h4>
+          <p>哗咪动漫聚合日本新番、国漫推荐、经典剧场版和补番列表，提供作品简介、类型标签、看点摘要和更新动态，帮助用户在线选择与追番。页面不直接提供片源，而是作为内容导航与推荐平台。</p>
+        </div>
+        <div class="faq-card">
+          <h4>如何快速找到想看的动漫类型？</h4>
+          <p>在首屏搜索框输入关键词，或使用分类入口按“热血战斗”“恋爱日常”“悬疑推理”等标签筛选。每个分类下会展示对应作品卡片，并附有评分和更新状态，方便对比选择。</p>
+        </div>
+        <div class="faq-card">
+          <h4>2026年秋季有哪些值得追的新番？</h4>
+          <p>根据当前热度，《星海旅人》《雾中侦探》《咖啡厅的午后》讨论度较高。热血向可关注《剑与魂》，国漫爱好者可以看《山海奇缘》。详细推荐见热门推荐卡片。</p>
+        </div>
+        <div class="faq-card">
+          <h4>页面上的评分和热度数据来自哪里？</h4>
+          <p>评分和热度是编辑根据社区讨论量、用户评论及模拟数据综合整理，用于提供相对参考，不代表官方排名。实际观感因人而异，建议结合评论和深度解析判断。</p>
+        </div>
+        <div class="faq-card">
+          <h4>可以在哗咪动漫发表评论吗？</h4>
+          <p>当前页面展示的是精选用户评论样例，用于呈现社区讨论氛围。实际评论功能需要登录后使用，评论内容会展示在对应作品或专题下方。</p>
+        </div>
+        <div class="faq-card">
+          <h4>为什么有些动漫显示“更新至第X话”？</h4>
+          <p>该信息用于同步作品当前进度，方便追更用户了解最新集数。剧场版则标注“剧场版”或“已上线”。更新状态会随官方放送节奏调整，建议收藏页面以便查看变化。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 用户评论 -->
+    <section id="comments" style="margin-bottom:50px;">
+      <h2 class="section-title"><span>用户评论</span> 大家都在聊什么</h2>
+      <p class="section-desc">来自近期社区的真实讨论（模拟精选）。</p>
+      <div class="comment-grid">
+        <div class="comment-card">
+          <div class="comment-header"><span class="comment-name">追番小能手</span><span class="comment-date">11月6日</span></div>
+          <p class="comment-text">星海旅人第8话作画炸裂，配乐也到位，希望后面不要崩。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header"><span class="comment-name">剑道部老王</span><span class="comment-date">11月5日</span></div>
+          <p class="comment-text">剑与魂的打斗帧数太足了，国漫现在真的越做越好。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header"><span class="comment-name">咖啡不加糖</span><span class="comment-date">11月6日</span></div>
+          <p class="comment-text">咖啡厅的午后很适合下饭，剧情不紧不慢，治愈系推荐。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header"><span class="comment-name">推理迷阿杰</span><span class="comment-date">11月4日</span></div>
+          <p class="comment-text">雾中侦探第10话信息量好大，感觉之前埋的伏笔开始收了。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header"><span class="comment-name">山海经爱好者</span><span class="comment-date">11月5日</span></div>
+          <p class="comment-text">山海奇缘的美术风格很舒服，水墨风打斗少见，支持国漫。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header"><span class="comment-name">夏日限定</span><span class="comment-date">11月3日</span></div>
+          <p class="comment-text">夏日终曲看哭了，青春题材果然容易共情，推荐一个人安静看。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header"><span class="comment-name">萝卜控</span><span class="comment-date">11月2日</span></div>
+          <p class="comment-text">机甲战线目前才3话，机体设计不错，希望剧情稳住。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header"><span class="comment-name">百鬼夜行</span><span class="comment-date">11月1日</span></div>
+          <p class="comment-text">百妖绘卷这集有点平淡，不过画面还是美的，继续追。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header"><span class="comment-name">新番观察员</span><span class="comment-date">10月30日</span></div>
+          <p class="comment-text">哗咪动漫的推荐列表挺实用，省得自己一个个找。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header"><span class="comment-name">老宅</span><span class="comment-date">10月28日</span></div>
+          <p class="comment-text">分类标签可以再多一点，比如加个“运动番”分类。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header"><span class="comment-name">薄荷汽水</span><span class="comment-date">11月6日</span></div>
+          <p class="comment-text">首页更新列表时间排列清晰，每天刷一下就知道追什么了。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header"><span class="comment-name">声优厨</span><span class="comment-date">11月5日</span></div>
+          <p class="comment-text">希望多写一些声优阵容介绍，有时候因为声优看一部番。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 相关资讯 -->
+    <section id="news" style="margin-bottom:50px;">
+      <h2 class="section-title"><span>动漫资讯</span> 近期动态速览</h2>
+      <p class="section-desc">行业消息、新番定档与制作情报。</p>
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-date">2026-11-07</div>
+          <h4>《星海旅人》第二季度制作决定，2027年放送</h4>
+          <p>官方宣布续篇制作中，将继续讲述星图碎片背后的真相，原班制作团队回归。</p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-06</div>
+          <h4>国漫《山海奇缘》海外播放权售出</h4>
+          <p>该作品将在多个海外平台上线，水墨风格受到国际关注，第二季已进入前期筹备。</p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-05</div>
+          <h4>《剑与魂》最终话提前预告，时长加长</h4>
+          <p>官方发布最终话预告片，总时长将达45分钟，制作组表示会呈现完整决战。</p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-04</div>
+          <h4>剧场版《夏日终曲》票房突破15亿</h4>
+          <p>上映三周累计票房成绩优秀，官方发布感谢PV，蓝光版预定明年1月发售。</p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-03</div>
+          <h4>《雾中侦探》作者新作动画化决定</h4>
+          <p>推理小说家新作《深夜电台》宣布动画化，预计2027年春季播出，类型为悬疑群像剧。</p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-02</div>
+          <h4>2027年1月新番首批名单公开</h4>
+          <p>多部续作与原创动画定档，包含奇幻、运动、美食等题材，详细列表可关注哗咪动漫后续更新。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 订阅引导 -->
+    <section id="subscribe" style="background:var(--bg-card); border-radius:var(--radius-lg); padding:36px 40px; box-shadow:var(--shadow-sm); border:1px solid var(--border-light); margin-bottom:40px; text-align:center;">
+      <h2 style="font-size:26px; margin-bottom:10px;">订阅哗咪动漫追番提醒</h2>
+      <p style="color:var(--text-muted); margin-bottom:24px;">不再错过更新，每周新番速递直达你的邮箱。</p>
+      <div style="display:flex; max-width:480px; margin:0 auto; gap:12px; flex-wrap:wrap; justify-content:center;">
+        <input type="email" placeholder="你的邮箱地址" style="flex:1; min-width:220px; padding:14px 20px; border-radius:40px; border:1px solid var(--border-light); font-size:15px; outline:none;">
+        <button class="btn btn-primary" style="padding:14px 32px;">订阅</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-text" style="color:white;">哗咪动漫</span>
+          <p>哗咪动漫，专注在线动漫观看与追番推荐。聚合日本新番、国漫佳作、经典剧场版，提供分类筛选、新番时间表与社区讨论，帮助动漫爱好者高效选番。</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>探索</h5>
+            <a href="/#hot-recommend">热门推荐</a>
+            <a href="/#latest-update">最新更新</a>
+            <a href="/#category">分类入口</a>
+            <a href="/#deep-analysis">深度解析</a>
+          </div>
+          <div class="footer-col">
+            <h5>帮助</h5>
+            <a href="/#faq">常见问题</a>
+            <a href="/#comments">用户评论</a>
+            <a href="/#news">动漫资讯</a>
+            <a href="/#subscribe">订阅提醒</a>
+          </div>
+          <div class="footer-col">
+            <h5>友情链接</h5>
+            <a href="#">动漫社区</a>
+            <a href="#">番剧时间表</a>
+            <a href="#">声优资料库</a>
+            <a href="#">制作公司索引</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 哗咪动漫 · 本站内容为推荐与导航，不存储任何视频文件。免责声明：页面信息仅供参考，请支持正版动画。</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 固定脚本 -->
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+  </html>
