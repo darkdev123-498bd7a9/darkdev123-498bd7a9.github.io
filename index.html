@@ -1,0 +1,915 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+    <title>91网-热门内容资讯_91网深度解析与推荐指南</title>
+    <meta name="description" content="91网是内容消费与深度资讯的聚合平台，提供热门推荐、最新动态、深度解析与用户评论。围绕91网整合影视、短剧、直播、动漫等多元内容，帮助用户快速找到值得追更与收藏的专题资源。">
+    <meta name="keywords" content="91网,91网热门推荐,91网深度解析,91网资讯,内容聚合平台">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Ctext x='32' y='44' font-family='system-ui,sans-serif' font-weight='700' font-size='34' fill='%23facc15' text-anchor='middle'%3E91%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --bg: #f4f6fb;
+            --surface: #ffffff;
+            --surface-2: #f9fafc;
+            --ink: #0f172a;
+            --ink-2: #334155;
+            --muted: #64748b;
+            --line: #e2e8f0;
+            --brand: #2563eb;
+            --brand-2: #7c3aed;
+            --accent: #f59e0b;
+            --accent-soft: #fef3c7;
+            --radius-s: 10px;
+            --radius-m: 16px;
+            --radius-l: 24px;
+            --shadow-s: 0 4px 12px rgba(15, 23, 42, 0.05);
+            --shadow-m: 0 10px 28px rgba(15, 23, 42, 0.08);
+            --maxw: 1200px;
+            --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        img, svg {
+            display: block;
+            max-width: 100%;
+        }
+        ul {
+            list-style: none;
+        }
+        .wrap {
+            width: min(100% - 32px, var(--maxw));
+            margin-inline: auto;
+        }
+        /* 顶部导航 */
+        .nav-91 {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            height: 66px;
+        }
+        .logo-91 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.4rem;
+            letter-spacing: -0.02em;
+        }
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--brand), var(--brand-2));
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-size: 1rem;
+            font-weight: 800;
+            box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
+        }
+        .nav-links {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .nav-links a {
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            color: var(--ink-2);
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            background: #eef2ff;
+            color: var(--brand);
+        }
+        /* 首屏Banner */
+        .banner-91 {
+            background: linear-gradient(105deg, #0f172a 0%, #1e293b 55%, #312e81 100%);
+            padding: 52px 0 48px;
+            color: #fff;
+            border-radius: 0 0 32px 32px;
+            margin-bottom: 34px;
+            position: relative;
+            overflow: hidden;
+        }
+        .banner-91::after {
+            content: "";
+            position: absolute;
+            right: -8%;
+            top: -30%;
+            width: 520px;
+            height: 520px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(250,204,21,0.18), transparent 70%);
+            pointer-events: none;
+        }
+        .banner-content {
+            position: relative;
+            z-index: 2;
+            max-width: 780px;
+        }
+        .banner-badge {
+            display: inline-block;
+            background: rgba(250, 204, 21, 0.15);
+            color: #fde68a;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            margin-bottom: 18px;
+            border: 1px solid rgba(250,204,21,0.3);
+        }
+        .banner-91 h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+        .banner-91 h1 span {
+            color: #facc15;
+        }
+        .banner-desc {
+            font-size: 1.05rem;
+            color: #cbd5e1;
+            max-width: 640px;
+            margin-bottom: 28px;
+        }
+        .banner-search {
+            display: flex;
+            background: #fff;
+            border-radius: 999px;
+            padding: 6px;
+            max-width: 520px;
+            margin-bottom: 24px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+        .banner-search input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 10px 18px;
+            font-size: 0.95rem;
+            border-radius: 999px;
+            color: var(--ink);
+            font-family: var(--font);
+        }
+        .banner-search input::placeholder {
+            color: #94a3b8;
+        }
+        .banner-search button {
+            border: none;
+            background: var(--brand);
+            color: #fff;
+            padding: 10px 26px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: var(--font);
+            white-space: nowrap;
+        }
+        .banner-search button:hover {
+            background: #1d4ed8;
+        }
+        .banner-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .banner-tags a {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            padding: 7px 16px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            color: #e2e8f0;
+            transition: 0.2s;
+        }
+        .banner-tags a:hover {
+            background: rgba(250,204,21,0.2);
+            border-color: rgba(250,204,21,0.5);
+            color: #fde68a;
+        }
+        /* 通用Section */
+        .sec-91 {
+            margin-bottom: 38px;
+        }
+        .sec-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+        .sec-head h2 {
+            font-size: 1.55rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sec-head h2::before {
+            content: "";
+            width: 6px;
+            height: 22px;
+            border-radius: 4px;
+            background: linear-gradient(180deg, var(--brand), var(--brand-2));
+            display: inline-block;
+        }
+        .sec-head .more {
+            font-size: 0.88rem;
+            color: var(--muted);
+            transition: 0.2s;
+        }
+        .sec-head .more:hover {
+            color: var(--brand);
+        }
+        /* 卡片网格 */
+        .grid-91 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+        .card-91 {
+            background: var(--surface);
+            border-radius: var(--radius-m);
+            padding: 20px;
+            box-shadow: var(--shadow-s);
+            border: 1px solid var(--line);
+            transition: transform 0.22s, box-shadow 0.22s;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .card-91:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-m);
+        }
+        .card-91 .cover {
+            height: 110px;
+            border-radius: var(--radius-s);
+            background: linear-gradient(135deg, #c7d2fe, #e0e7ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #312e81;
+            font-size: 1.2rem;
+            letter-spacing: 0.04em;
+        }
+        .card-91 .cover.v2 { background: linear-gradient(135deg, #fde68a, #fef3c7); color: #92400e; }
+        .card-91 .cover.v3 { background: linear-gradient(135deg, #a7f3d0, #d1fae5); color: #065f46; }
+        .card-91 .cover.v4 { background: linear-gradient(135deg, #fecaca, #fee2e2); color: #991b1b; }
+        .card-91 .cover.v5 { background: linear-gradient(135deg, #bae6fd, #e0f2fe); color: #075985; }
+        .card-91 .cover.v6 { background: linear-gradient(135deg, #ddd6fe, #ede9fe); color: #5b21b6; }
+        .card-91 h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1.35;
+        }
+        .card-91 .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .tag-91 {
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 999px;
+            background: #eef2ff;
+            color: var(--brand);
+            font-weight: 500;
+        }
+        .tag-91.hot {
+            background: var(--accent-soft);
+            color: #b45309;
+        }
+        .card-91 p {
+            font-size: 0.88rem;
+            color: var(--muted);
+            line-height: 1.55;
+            flex: 1;
+        }
+        .card-meta {
+            display: flex;
+            gap: 12px;
+            font-size: 0.75rem;
+            color: #94a3b8;
+            flex-wrap: wrap;
+        }
+        /* 最新更新列表 */
+        .update-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .update-item {
+            background: var(--surface);
+            border-radius: var(--radius-s);
+            padding: 14px 16px;
+            border: 1px solid var(--line);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: 0.2s;
+        }
+        .update-item:hover {
+            border-color: #bfdbfe;
+            background: #f8faff;
+        }
+        .update-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--brand);
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+        .update-item h4 {
+            font-size: 0.92rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .update-item span {
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+        /* 分类入口 */
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+        .cat-item {
+            background: var(--surface);
+            border-radius: var(--radius-s);
+            padding: 16px 18px;
+            border: 1px solid var(--line);
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: var(--ink-2);
+            transition: 0.2s;
+        }
+        .cat-item:hover {
+            background: #eef2ff;
+            border-color: #bfdbfe;
+            color: var(--brand);
+        }
+        /* 深度解析正文 */
+        .deep-text {
+            background: var(--surface);
+            border-radius: var(--radius-m);
+            padding: 30px 32px;
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow-s);
+        }
+        .deep-text h2 {
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+        }
+        .deep-text p {
+            font-size: 0.98rem;
+            color: var(--ink-2);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+        .deep-text strong {
+            color: var(--ink);
+            font-weight: 700;
+        }
+        /* FAQ 手风琴 */
+        .faq-91 {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .faq-item {
+            background: var(--surface);
+            border-radius: var(--radius-s);
+            border: 1px solid var(--line);
+            overflow: hidden;
+        }
+        .faq-q {
+            padding: 16px 20px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.2s;
+        }
+        .faq-q:hover {
+            background: #f8faff;
+        }
+        .faq-q::after {
+            content: "+";
+            font-size: 1.2rem;
+            color: var(--brand);
+            font-weight: 400;
+            transition: 0.2s;
+        }
+        .faq-item.open .faq-q::after {
+            content: "−";
+        }
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 20px;
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+        .faq-item.open .faq-a {
+            max-height: 260px;
+            padding: 0 20px 18px;
+        }
+        /* 评论 */
+        .comment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .comment-item {
+            background: var(--surface);
+            border-radius: var(--radius-s);
+            padding: 14px 16px;
+            border: 1px solid var(--line);
+            display: flex;
+            gap: 12px;
+        }
+        .avatar-91 {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c7d2fe, #a5b4fc);
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #312e81;
+            flex-shrink: 0;
+        }
+        .comment-body b {
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+        .comment-body p {
+            font-size: 0.85rem;
+            color: var(--ink-2);
+            margin-top: 3px;
+        }
+        .comment-body time {
+            font-size: 0.7rem;
+            color: #94a3b8;
+            margin-left: 8px;
+            font-weight: 400;
+        }
+        /* 资讯 */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .news-card {
+            background: var(--surface);
+            border-radius: var(--radius-s);
+            padding: 18px;
+            border: 1px solid var(--line);
+            transition: 0.2s;
+        }
+        .news-card:hover {
+            box-shadow: var(--shadow-m);
+            transform: translateY(-2px);
+        }
+        .news-card time {
+            font-size: 0.72rem;
+            color: #94a3b8;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .news-card h4 {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+        .news-card p {
+            font-size: 0.83rem;
+            color: var(--muted);
+        }
+        /* 页脚 */
+        .footer-91 {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 40px 0 30px;
+            margin-top: 48px;
+            border-radius: 32px 32px 0 0;
+        }
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+        .footer-91 h5 {
+            color: #e2e8f0;
+            font-size: 0.9rem;
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+        .footer-91 p, .footer-91 li {
+            font-size: 0.82rem;
+            line-height: 1.8;
+        }
+        .footer-91 a:hover {
+            color: #facc15;
+        }
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            margin-top: 30px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 0.78rem;
+        }
+        /* 响应式 */
+        @media (max-width: 900px) {
+            .grid-91 { grid-template-columns: repeat(2, 1fr); }
+            .cat-grid { grid-template-columns: repeat(2, 1fr); }
+            .comment-grid { grid-template-columns: 1fr; }
+            .news-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+            .update-list { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .grid-91 { grid-template-columns: 1fr; }
+            .news-grid { grid-template-columns: 1fr; }
+            .cat-grid { grid-template-columns: 1fr 1fr; }
+            .footer-inner { grid-template-columns: 1fr; }
+            .banner-91 { padding: 36px 0 32px; border-radius: 0 0 20px 20px; }
+            .banner-search { flex-direction: column; gap: 8px; background: transparent; box-shadow: none; }
+            .banner-search input { background: #fff; padding: 12px 18px; }
+            .banner-search button { width: 100%; padding: 12px; }
+            .deep-text { padding: 22px 18px; }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header class="nav-91">
+        <div class="wrap nav-inner">
+            <a href="/" class="logo-91" aria-label="91网首页">
+                <span class="logo-mark">91</span>
+                <span>91网</span>
+            </a>
+            <nav class="nav-links" aria-label="主导航">
+                <a href="/#hot-91">热门推荐</a>
+                <a href="/#latest-91">最新更新</a>
+                <a href="/#deep-91">深度解析</a>
+                <a href="/#cat-91">分类入口</a>
+                <a href="/#faq-91">常见问题</a>
+                <a href="/#comment-91">用户评论</a>
+                <a href="/#news-91">相关资讯</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 首屏 Banner -->
+        <section class="banner-91" id="top-91">
+            <div class="wrap banner-content">
+                <span class="banner-badge">🔥 2026 内容消费风向标</span>
+                <h1>91网 · 热门内容<span>深度推荐</span>与实时追踪</h1>
+                <p class="banner-desc">
+                    聚合影视、短剧、直播、动漫、游戏等全品类内容，用编辑视角筛选值得看、值得追、值得收藏的优质专题。91网不只提供列表，更提供判断依据。
+                </p>
+                <div class="banner-search" role="search">
+                    <input type="search" placeholder="搜索 91网 热门内容、剧集、主播或专题…" aria-label="站内搜索">
+                    <button type="button">搜索</button>
+                </div>
+                <div class="banner-tags" aria-label="热门标签快捷入口">
+                    <a href="/#hot-91">热门推荐</a>
+                    <a href="/#latest-91">最新更新</a>
+                    <a href="/#deep-91">深度解析</a>
+                    <a href="/#cat-91">分类导航</a>
+                    <a href="/#faq-91">常见问题</a>
+                    <a href="/#comment-91">用户评论</a>
+                    <a href="/#news-91">资讯动态</a>
+                    <a href="/#sub-91">订阅追踪</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="wrap">
+            <!-- 内容简介 -->
+            <section class="sec-91" id="intro-91">
+                <div class="sec-head">
+                    <h2>91网内容简介</h2>
+                </div>
+                <div class="deep-text" style="padding:24px 28px;">
+                    <p><strong>91网</strong>是一个面向内容消费人群的聚合型专题平台，核心价值在于把分散的热门推荐、更新动态、深度解析与用户反馈整合在同一个浏览路径里。无论你关注的是影视剧集、微短剧、直播间、动漫番剧还是游戏赛事，都能通过91网的分类入口与专题模块快速定位到感兴趣的内容。</p>
+                    <p>这个页面适合三类人：一是想快速了解近期热门内容的普通用户；二是习惯先看编辑解析、再看用户评论的理性消费者；三是需要批量追踪更新状态的重度追更人群。91网通过“热门推荐—最新更新—深度解析—常见问题—用户评论”的纵向结构，让浏览体验既有广度也有深度。</p>
+                    <p>页面提供的不只是标题列表，还包括题材标签、看点摘要、热度参考和编辑视角的解析正文。你可以把它当作一个内容消费前的参考站，也可以当作追更过程中的收藏夹。91网希望帮助用户减少选择成本，同时保留足够的判断依据。</p>
+                </div>
+            </section>
+
+            <!-- 热门推荐 -->
+            <section class="sec-91" id="hot-91">
+                <div class="sec-head">
+                    <h2>热门内容推荐</h2>
+                    <a href="/#latest-91" class="more">查看最新更新 →</a>
+                </div>
+                <div class="grid-91">
+                    <article class="card-91">
+                        <div class="cover">热播剧集</div>
+                        <div class="tag-row"><span class="tag-91 hot">热播</span><span class="tag-91">悬疑</span><span class="tag-91">12集</span></div>
+                        <h3>暗涌之城</h3>
+                        <p>都市悬疑短剧，单集18分钟，节奏紧凑反转密集。适合通勤碎片时间追看，目前已更新至第9集。</p>
+                        <div class="card-meta"><span>🔥 9.2万热度</span><span>更新至第9集</span></div>
+                    </article>
+                    <article class="card-91">
+                        <div class="cover v2">直播专区</div>
+                        <div class="tag-row"><span class="tag-91 hot">直播中</span><span class="tag-91">电竞</span><span class="tag-91">赛事</span></div>
+                        <h3>巅峰对决·季中邀请赛</h3>
+                        <p>91网电竞直播间晚间档，专业解说与实时弹幕互动，适合关注赛事进程与战术细节的观众。</p>
+                        <div class="card-meta"><span>👀 5.8万在看</span><span>今晚 20:00</span></div>
+                    </article>
+                    <article class="card-91">
+                        <div class="cover v3">动漫番剧</div>
+                        <div class="tag-row"><span class="tag-91">新番</span><span class="tag-91">奇幻</span><span class="tag-91">周更</span></div>
+                        <h3>星海旅人</h3>
+                        <p>本季度口碑黑马，制作公司以细腻画风见长。世界观设定扎实，适合喜欢慢热群像剧的观众。</p>
+                        <div class="card-meta"><span>⭐ 9.4分</span><span>每周五更新</span></div>
+                    </article>
+                    <article class="card-91">
+                        <div class="cover v4">微短剧</div>
+                        <div class="tag-row"><span class="tag-91">爽剧</span><span class="tag-91">逆袭</span><span class="tag-91">已完结</span></div>
+                        <h3>归来仍是巅峰</h3>
+                        <p>典型逆袭叙事，每集3分钟高能不断。适合喜欢强节奏、不拖沓的短剧用户，全集可一次看完。</p>
+                        <div class="card-meta"><span>🔥 12.3万播放</span><span>全36集</span></div>
+                    </article>
+                    <article class="card-91">
+                        <div class="cover v5">纪录片</div>
+                        <div class="tag-row"><span class="tag-91">人文</span><span class="tag-91">历史</span><span class="tag-91">高分</span></div>
+                        <h3>山河故人录</h3>
+                        <p>以地方志为线索的人文纪录片，画面考究、旁白克制。适合喜欢历史档案与真实故事的深度观众。</p>
+                        <div class="card-meta"><span>⭐ 9.1分</span><span>全6集</span></div>
+                    </article>
+                    <article class="card-91">
+                        <div class="cover v6">综艺</div>
+                        <div class="tag-row"><span class="tag-91">真人秀</span><span class="tag-91">旅行</span><span class="tag-91">治愈</span></div>
+                        <h3>慢行日记</h3>
+                        <p>无剧本旅行慢综艺，嘉宾互动自然，剪辑节奏舒缓。适合下班后放松观看，弹幕氛围友好。</p>
+                        <div class="card-meta"><span>⭐ 8.8分</span><span>每周日更新</span></div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 最新更新 -->
+            <section class="sec-91" id="latest-91">
+                <div class="sec-head">
+                    <h2>最新更新动态</h2>
+                    <span style="font-size:0.82rem;color:var(--muted);">截至 2026年11月7日</span>
+                </div>
+                <div class="update-list">
+                    <div class="update-item"><span class="update-dot"></span><div><h4>暗涌之城 · 第9集上线</h4><span>2026-11-07 10:20 · 悬疑短剧</span></div></div>
+                    <div class="update-item"><span class="update-dot"></span><div><h4>星海旅人 · 第5话更新</h4><span>2026-11-06 22:00 · 动漫番剧</span></div></div>
+                    <div class="update-item"><span class="update-dot"></span><div><h4>巅峰对决 · 今晚直播预告</h4><span>2026-11-07 19:30 · 电竞直播</span></div></div>
+                    <div class="update-item"><span class="update-dot"></span><div><h4>慢行日记 · 第7期上线</h4><span>2026-11-06 12:00 · 旅行综艺</span></div></div>
+                    <div class="update-item"><span class="update-dot"></span><div><h4>归来仍是巅峰 · 全集释出</h4><span>2026-11-05 18:00 · 微短剧</span></div></div>
+                    <div class="update-item"><span class="update-dot"></span><div><h4>山河故人录 · 第3集上线</h4><span>2026-11-04 20:00 · 人文纪录片</span></div></div>
+                    <div class="update-item"><span class="update-dot"></span><div><h4>迷雾剧场 · 新剧官宣定档</h4><span>2026-11-03 11:00 · 剧集资讯</span></div></div>
+                    <div class="update-item"><span class="update-dot"></span><div><h4>音乐现场 · 周末特别企划</h4><span>2026-11-02 16:00 · 音乐直播</span></div></div>
+                </div>
+            </section>
+
+            <!-- 分类入口 -->
+            <section class="sec-91" id="cat-91">
+                <div class="sec-head">
+                    <h2>分类快速入口</h2>
+                </div>
+                <div class="cat-grid">
+                    <a href="/#hot-91" class="cat-item">🎬 影视剧集</a>
+                    <a href="/#hot-91" class="cat-item">📱 微短剧</a>
+                    <a href="/#hot-91" class="cat-item">📡 直播专区</a>
+                    <a href="/#hot-91" class="cat-item">🎌 动漫番剧</a>
+                    <a href="/#hot-91" class="cat-item">🎮 游戏电竞</a>
+                    <a href="/#hot-91" class="cat-item">🎤 综艺娱乐</a>
+                    <a href="/#hot-91" class="cat-item">📖 纪录片</a>
+                    <a href="/#hot-91" class="cat-item">🎵 音乐现场</a>
+                </div>
+            </section>
+
+            <!-- 深度解析 -->
+            <section class="sec-91" id="deep-91">
+                <div class="sec-head">
+                    <h2>91网深度解析</h2>
+                </div>
+                <div class="deep-text">
+                    <p>在内容供给过剩的环境里，用户打开<strong>91网</strong>通常带着明确意图：要么想快速知道最近什么值得看，要么想判断某个内容是否适合自己。这个页面正是围绕这两种需求来组织信息的。热门推荐模块用卡片形式给出题材、更新状态和简短看点，适合快速扫读；深度解析则负责回答“为什么值得看”以及“适合谁看”。</p>
+                    <p>从类型上看，91网覆盖的内容跨度较大。悬疑短剧强调节奏与反转密度，适合单集时长15-20分钟的碎片化观看场景；微短剧主打爽点前置和强情绪，每集3-5分钟，适合通勤或睡前快速消费；纪录片和人文综艺则更依赖画面质感与叙事沉淀，适合周末完整时间投入。直播和电竞赛事是另一条线，核心价值在于实时互动与不可回放的现场感。动漫番剧和音乐现场则更偏向粉丝黏性与社区讨论氛围。</p>
+                    <p>用户搜索“91网”时，常见意图包括：找近期热门、确认更新进度、看用户评价、对比同类内容。因此页面在推荐卡片之外，还设置了最新更新列表和评论模块。更新列表帮助追更用户快速确认“今天有没有更新”，评论模块则提供真实用户视角的补充信息——比如节奏是否拖沓、演技是否在线、画风是否稳定。这些信息往往比官方简介更有参考价值。</p>
+                    <p>在同类内容比较上，91网更强调“编辑判断+用户反馈”的双层筛选。编辑视角负责把内容按题材和消费场景归类，用户评论负责暴露实际观看体验中的问题。两者结合，可以减少“点进去才发现不对味”的试错成本。对于习惯先做功课再消费的用户来说，这种结构比单纯的热度榜单更实用。</p>
+                    <p>另外，91网在页面组织上刻意保持了清晰的纵向阅读层次：首屏给出搜索和快捷入口，中段用推荐和更新承接浏览，后段用深度解析和FAQ解决决策疑问，最后用评论和资讯补充社区感。这种结构适合移动端上下滑动浏览，也方便桌面端快速定位到感兴趣的部分。如果你正在找一个既能看推荐又能看解析的内容参考站，91网的这个专题页可以作为起点收藏。</p>
+                </div>
+            </section>
+
+            <!-- 体验指南 -->
+            <section class="sec-91" id="guide-91">
+                <div class="sec-head">
+                    <h2>浏览与消费体验指南</h2>
+                </div>
+                <div class="deep-text" style="padding:24px 28px;">
+                    <p><strong>页面结构清晰：</strong>91网专题页按“推荐—更新—分类—解析—问答—评论—资讯”的顺序排列，每个模块都有明确标题，方便快速跳读。顶部导航和首屏标签都指向对应锚点，无需反复滚动寻找。</p>
+                    <p><strong>分类筛选直观：</strong>影视剧集、微短剧、直播、动漫、游戏电竞等入口以网格形式呈现，点击即可回到对应推荐区域。对于只想看某一垂类的用户，可以跳过无关模块。</p>
+                    <p><strong>移动端友好：</strong>卡片和列表在窄屏下自动变为单列或双列，搜索框改为纵向排列，阅读压力较小。深度解析段落行距和字号经过调整，长时间阅读也不易疲劳。</p>
+                    <p><strong>适合追更与收藏：</strong>最新更新列表标注了日期和类型，追更用户可以直接对比更新时间。页面本身没有登录门槛，适合加入浏览器收藏夹作为定期回访的入口。</p>
+                    <p><strong>相关推荐扩展路径：</strong>每张推荐卡片都带有题材标签和简短看点，点击标签可回到分类区域继续浏览。评论和资讯模块则提供从“看内容”到“聊内容”的延伸，适合想进一步了解用户口碑的读者。</p>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="sec-91" id="faq-91">
+                <div class="sec-head">
+                    <h2>常见问题</h2>
+                </div>
+                <div class="faq-91">
+                    <div class="faq-item">
+                        <div class="faq-q">91网主要收录哪些类型的内容？</div>
+                        <div class="faq-a">91网覆盖影视剧集、微短剧、直播、动漫番剧、游戏电竞、综艺、纪录片和音乐现场等品类。页面会根据近期热度与更新状态调整推荐顺序，用户可以通过分类入口快速跳转到感兴趣的区域。不同垂类的消费节奏差异较大，建议先看分类说明再选择。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">第一次浏览91网，应该从哪里开始？</div>
+                        <div class="faq-a">推荐先从首屏下方的热门推荐卡片看起，每张卡片都标注了题材、更新状态和简短看点，适合快速判断是否对味。如果有明确类型偏好，可以直接点击分类入口。想了解编辑视角的完整分析，可以继续往下读深度解析模块。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">微短剧和常规剧集在91网上如何区分？</div>
+                        <div class="faq-a">微短剧通常标注“爽剧”“逆袭”“已完结”等标签，单集时长3-5分钟，总集数较多；常规剧集则标注“热播”“悬疑”“12集”等，单集18-45分钟。两者在消费场景上差异明显，碎片时间优先看微短剧，整块时间更适合常规剧集或纪录片。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">91网的更新列表多久刷新一次？</div>
+                        <div class="faq-a">更新列表按内容实际上线时间整理，页面展示的是截至2026年11月7日的动态。热门内容的更新频率取决于制作方排播，短剧和动漫番剧通常周更，直播类按场次更新。建议收藏页面并定期查看最新更新模块。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">用户评论对选择内容有帮助吗？</div>
+                        <div class="faq-a">有帮助，但需要结合自身偏好判断。评论中既有推荐安利，也有节奏吐槽和角色讨论，能暴露官方简介之外的实际观看体验。建议重点看提到“节奏”“演技”“画风”“更新稳定性”的评论，这些信息对决策参考价值较高。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">如何通过91网找到类似风格的推荐？</div>
+                        <div class="faq-a">可以先点击感兴趣卡片的题材标签，回到分类入口区域浏览同类内容；也可以阅读深度解析中关于类型特点的段落，根据关键词在站内搜索框检索。页面中的相关资讯和评论讨论也会提到同类作品，适合作为延伸浏览的线索。</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 用户评论 -->
+            <section class="sec-91" id="comment-91">
+                <div class="sec-head">
+                    <h2>用户评论</h2>
+                    <span style="font-size:0.8rem;color:var(--muted);">近30天精选</span>
+                </div>
+                <div class="comment-grid">
+                    <div class="comment-item"><div class="avatar-91">追</div><div class="comment-body"><b>追更小分队 <time>2026-11-06</time></b><p>暗涌之城第9集反转有点意思，但中间回忆片段稍多，建议1.25倍速看。</p></div></div>
+                    <div class="comment-item"><div class="avatar-91">画</div><div class="comment-body"><b>画风观察员 <time>2026-11-05</time></b><p>星海旅人的美术确实稳，背景细节比上一部进步明显，剧情慢热但值得等。</p></div></div>
+                    <div class="comment-item"><div class="avatar-91">电</div><div class="comment-body"><b>电竞老张 <time>2026-11-07</time></b><p>今晚解说阵容还行，希望别像上次那样偏袒，弹幕氛围比某某平台好一些。</p></div></div>
+                    <div class="comment-item"><div class="avatar-91">短</div><div class="comment-body"><b>短剧收割机 <time>2026-11-04</time></b><p>归来仍是巅峰前20集爽点密集，后面有点重复，不过免费看全集不亏。</p></div></div>
+                    <div class="comment-item"><div class="avatar-91">纪</div><div class="comment-body"><b>纪录片爱好者 <time>2026-11-03</time></b><p>山河故人录旁白加分，画面质感在线，就是更新太慢，一周一集不够看。</p></div></div>
+                    <div class="comment-item"><div class="avatar-91">综</div><div class="comment-body"><b>周末看综艺 <time>2026-11-02</time></b><p>慢行日记节奏舒服，嘉宾不强行制造冲突，适合下饭。但剪辑偶尔跳。</p></div></div>
+                    <div class="comment-item"><div class="avatar-91">路</div><div class="comment-body"><b>路人甲 <time>2026-11-01</time></b><p>91网这个推荐页信息量可以，不用一个个平台翻，省事。就是希望更新再快点。</p></div></div>
+                    <div class="comment-item"><div class="avatar-91">声</div><div class="comment-body"><b>声控一枚 <time>2026-10-30</time></b><p>音乐现场那栏能不能多加点独立乐队？现在偏流行，想找点不一样的。</p></div></div>
+                    <div class="comment-item"><div class="avatar-91">悬</div><div class="comment-body"><b>悬疑党 <time>2026-10-29</time></b><p>暗涌之城前几集铺垫不错，希望别烂尾，同类推荐可以多来点社会派。</p></div></div>
+                    <div class="comment-item"><div class="avatar-91">番</div><div class="comment-body"><b>番剧收藏家 <time>2026-10-28</time></b><p>星海旅人第5话作画稳定，音乐也搭。就是更新太慢，建议攒几集再看。</p></div></div>
+                    <div class="comment-item"><div class="avatar-91">直</div><div class="comment-body"><b>直播常客 <time>2026-10-27</time></b><p>91网直播入口挺好找的，就是希望增加一个回放专区，错过比赛有点难受。</p></div></div>
+                    <div class="comment-item"><div class="avatar-91">吐</div><div class="comment-body"><b>吐槽不吐不快 <time>2026-10-26</time></b><p>有些短剧封面和内容差距有点大，建议编辑卡片时把看点写实一点。</p></div></div>
+                </div>
+            </section>
+
+            <!-- 相关资讯 -->
+            <section class="sec-91" id="news-91">
+                <div class="sec-head">
+                    <h2>相关资讯</h2>
+                </div>
+                <div class="news-grid">
+                    <article class="news-card"><time>2026-11-07</time><h4>暗涌之城进入收官倒计时，最后三集看点前瞻</h4><p>悬疑线收束，主演采访透露结局有双重反转，91网专题页已同步更新剧集标签。</p></article>
+                    <article class="news-card"><time>2026-11-06</time><h4>星海旅人制作组公开新一话原画集</h4><p>官方释出第5话部分原画与色彩指定，画风讨论在社区持续升温。</p></article>
+                    <article class="news-card"><time>2026-11-05</time><h4>季中邀请赛赛程出炉，91网直播专区同步上线</h4><p>小组赛对阵公布，晚间档直播预约开启，解说阵容包含前职业选手。</p></article>
+                    <article class="news-card"><time>2026-11-04</time><h4>微短剧市场观察：单集时长继续压缩，爽点更前置</h4><p>多家制作方调整叙事节奏，91网近期上线的短剧标签也反映出这一趋势。</p></article>
+                    <article class="news-card"><time>2026-11-02</time><h4>山河故人录导演谈地方志影像化</h4><p>纪录片团队分享拍摄幕后，强调实景与档案结合，适合人文类观众关注。</p></article>
+                    <article class="news-card"><time>2026-10-31</time><h4>慢行日记新一期取景地公开，旅行路线受关注</h4><p>节目组公布本期拍摄路线，评论区已有用户整理同款打卡攻略。</p></article>
+                </div>
+            </section>
+
+            <!-- 订阅引导 -->
+            <section class="sec-91" id="sub-91" style="background: var(--surface); border-radius: var(--radius-m); padding: 28px 30px; border:1px solid var(--line);">
+                <div style="display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;">
+                    <div>
+                        <h2 style="font-size:1.3rem; margin-bottom:6px;">订阅91网更新提醒</h2>
+                        <p style="font-size:0.9rem; color:var(--muted);">热门内容更新、直播预告与深度解析，第一时间掌握。</p>
+                    </div>
+                    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                        <input type="email" placeholder="输入邮箱地址" style="padding:10px 16px; border-radius:999px; border:1px solid var(--line); font-family:var(--font); font-size:0.9rem; min-width:220px;" aria-label="订阅邮箱">
+                        <button style="background:var(--brand); color:#fff; border:none; padding:10px 24px; border-radius:999px; font-weight:600; cursor:pointer; font-family:var(--font);">立即订阅</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer-91">
+        <div class="wrap">
+            <div class="footer-inner">
+                <div>
+                    <div class="logo-91" style="color:#f1f5f9; margin-bottom:12px;"><span class="logo-mark">91</span><span>91网</span></div>
+                    <p>聚合热门内容、深度解析与用户反馈，帮助内容消费者减少选择成本。页面信息仅供参考，具体内容以实际平台为准。</p>
+                </div>
+                <div>
+                    <h5>快速导航</h5>
+                    <ul>
+                        <li><a href="/#hot-91">热门推荐</a></li>
+                        <li><a href="/#latest-91">最新更新</a></li>
+                        <li><a href="/#deep-91">深度解析</a></li>
+                        <li><a href="/#faq-91">常见问题</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>内容分类</h5>
+                    <ul>
+                        <li><a href="/#cat-91">影视剧集</a></li>
+                        <li><a href="/#cat-91">微短剧</a></li>
+                        <li><a href="/#cat-91">直播专区</a></li>
+                        <li><a href="/#cat-91">动漫番剧</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>友情链接</h5>
+                    <ul>
+                        <li><a href="/#top-91">内容合作</a></li>
+                        <li><a href="/#news-91">资讯投稿</a></li>
+                        <li><a href="/#comment-91">社区反馈</a></li>
+                        <li><a href="/#sub-91">订阅服务</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 91网 · 内容专题页 版权所有</span>
+                <span>免责声明：本站为内容聚合与推荐页面，不存储任何视频文件，外部链接内容请自行甄别。</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 手风琴交互
+        document.querySelectorAll('.faq-q').forEach(function(q) {
+            q.addEventListener('click', function() {
+                var item = this.parentElement;
+                item.classList.toggle('open');
+            });
+        });
+        // 默认展开第一个FAQ
+        var firstFaq = document.querySelector('.faq-item');
+        if (firstFaq) firstFaq.classList.add('open');
+    </script>
+</body>
+  </html>
